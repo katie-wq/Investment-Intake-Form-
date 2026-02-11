@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investment Intake Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <p class="kicker">Deal Intake</p>
+        <h1>Capture Investment Details</h1>
+        <p>Submit structured deal data and write it directly into your Google Sheet.</p>
+      </section>
+
+      <section class="card">
+        <form id="investment-form" novalidate>
+          <div class="grid">
+            <label>Company name<input name="company_name" required /></label>
+            <label>
+              Fund
+              <select name="fund" required>
+                <option value="" selected disabled>Select fund</option>
+                <option>Calibrate Ventures I, LP</option>
+                <option>Calibrate Ventures II, LP</option>
+                <option>Calibrate Ventures III, LP</option>
+              </select>
+            </label>
+            <label>CEO<input name="ceo" required /></label>
+            <label>Source<input name="source" required /></label>
+            <label>Investment amount<input name="investment_amount" required /></label>
+            <label>Initial ownership<input name="initial_ownership" required /></label>
+            <label>Prior equity capital raised<input name="prior_equity_capital_raised" required /></label>
+            <label>
+              Thesis
+              <select name="thesis" required>
+                <option value="" selected disabled>Select thesis</option>
+                <option>Data-to-Action</option>
+                <option>Applied Research</option>
+                <option>Robotics and Autonomy</option>
+              </select>
+            </label>
+            <label>Business<textarea name="business" rows="3" required></textarea></label>
+            <label>
+              Industry
+              <select name="industry" required>
+                <option value="" selected disabled>Select industry</option>
+                <option>Advanced Automation and AI</option>
+                <option>Autonomous Platform</option>
+                <option>Enterprise SaaS</option>
+              </select>
+            </label>
+            <label>Location<input name="location" required /></label>
+            <label>
+              Security
+              <select name="security" required>
+                <option value="" selected disabled>Select security type</option>
+                <option>SAFE</option>
+                <option>Convertible Note</option>
+                <option>Equity</option>
+              </select>
+            </label>
+            <label>Round size<input name="round_size" required /></label>
+            <label>Post-money valuation<input name="post_money_valuation" required /></label>
+            <label>Effective pre-money valuation<input name="effective_pre_money_valuation" required /></label>
+            <label>Post-money liquidation pref<input name="post_money_liquidation_pref" required /></label>
+            <label>Lead investor<input name="lead_investor" required /></label>
+            <label>Other investors<textarea name="other_investors" rows="3" required></textarea></label>
+            <label>
+              Board seat
+              <select name="board_seat" required>
+                <option value="" selected disabled>Select board seat</option>
+                <option>Kevin Dunlap (Director)</option>
+                <option>Kevin Dunlap (Observer)</option>
+                <option>Jason Schoettler (Observer)</option>
+                <option>Jason Schoettler (Director)</option>
+                <option>Katie (Observer)</option>
+              </select>
+            </label>
+            <label>Closing date<input type="date" name="closing_date" required /></label>
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="submit-btn">Submit to Google Sheet</button>
+            <button type="button" id="generate-doc-btn" class="secondary-btn">Generate Doc</button>
+            <p id="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

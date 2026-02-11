@@ -1,0 +1,142 @@
+:root {
+  --bg: #f9f6ef;
+  --panel: #fff9ef;
+  --text: #1f2233;
+  --muted: #4f576a;
+  --accent: #cf3d2e;
+  --accent-dark: #9d281c;
+  --line: #e7dcc5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 90% 20%, #ffd9a7 0%, transparent 35%),
+    radial-gradient(circle at 10% 80%, #bfded6 0%, transparent 35%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 48px 20px 60px;
+}
+
+.hero h1 {
+  font-family: "Newsreader", serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin: 0;
+}
+
+.hero p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  margin-bottom: 8px;
+}
+
+.card {
+  margin-top: 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 14px 30px rgba(16, 22, 40, 0.08);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #243048;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #d8ccae;
+  border-radius: 12px;
+  padding: 10px 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 92px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.actions {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+button {
+  border: 0;
+  background: linear-gradient(135deg, var(--accent), #ed5f42);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(197, 64, 40, 0.3);
+}
+
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.secondary-btn {
+  background: linear-gradient(135deg, #276da8, #3d8ccf);
+}
+
+#status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
