@@ -59,14 +59,9 @@ async function submitToAppsScript(formData) {
 }
 
 function buildGenerateDocUrl() {
-  const companyName = (form.elements.company_name.value || "").trim();
   const url = new URL(APPS_SCRIPT_CONFIG.webAppUrl);
   url.searchParams.set("action", "generate_doc");
   url.searchParams.set("redirect", "1");
-
-  if (companyName) {
-    url.searchParams.set("company_name", companyName);
-  }
 
   return url.toString();
 }
@@ -105,13 +100,7 @@ generateDocBtn.addEventListener("click", () => {
     return;
   }
 
-  const companyName = (form.elements.company_name.value || "").trim();
-  if (!companyName) {
-    setStatus("Enter Company name first so the correct doc is generated.", true);
-    return;
-  }
-
   const generateUrl = buildGenerateDocUrl();
-  setStatus("Generating doc...");
+  setStatus("Generating doc from latest row...");
   window.open(generateUrl, "_blank", "noopener,noreferrer");
 });
